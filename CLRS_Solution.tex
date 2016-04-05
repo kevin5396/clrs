@@ -1,0 +1,846 @@
+
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt,oneside]{book} % A4 paper and 11pt font size
+\usepackage{mathtools}
+\usepackage{mathptmx}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+%\usepackage{times} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{clrscode3e}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+\setcounter{tocdepth}{1}
+
+\usepackage{hyperref}
+\setlength\parindent{24pt}
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE section
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Solutions to CLRS \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{@kevin5396} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+\tableofcontents
+\newpage
+%----------------------------------------------------------------------------------------
+%	
+%
+%	Part I
+%
+%----------------------------------------------------------------------------------------
+\part{Foundations}
+
+
+%----------------------------------------------------------------------------------------
+%	chapter 1
+%----------------------------------------------------------------------------------------
+\chapter{The Role of Algorithms in Computing}
+	\section{Exercises}
+		\subsection{}
+
+		A sorting example is that after a exam, teachers need sort the students' marks.
+		\\ I don't know any thing about computing a convex hull xD.
+		\subsection{}
+		The space that a procedure uses, the resources it consumes.
+		\subsection{}
+		I've learned Linked List before .
+		\paragraph{\textbf{strengths}} convient to insert and erase.
+		\paragraph{\textbf{limitations}} cost a lot to visit a specific element.
+		
+		\subsection{}
+		Not so similar. The shortest-path problem is to find the shortest path from a source place to many other places. But the traveling-salesman problems differs, though, is to find a round tour that is the shortest.
+		
+		\subsection{}
+		Let's take the sorting problem, sorting is exactly needing a best solution. But talking about traveling problem, an approximately algorithm is sufficient.
+	\section{Exercises}
+		\subsection{}
+		A topology sort is of great use in find a sequence for student to register courses
+		\subsection{}
+		Let $n < 8\lg n $, we can see that for $ n \leq 64$, this holds.
+		\subsection{}
+		\begin{center}
+		\begin{tabular}{c|p{5cm}| p{5cm}}
+			\hline
+			$ n $ & $ 100n^2$ & $ 2^n$ \\ \hline
+			10 & 10000 & 1024 \\ \hline
+			13 & 16900 & 8192 \\ \hline
+			14 & 19600 & 16384 \\ \hline
+			15 & 22500 & 32768\\
+			
+		\end{tabular} 
+		\end{center}
+		Starts from 15, $100n^2 $ is faster than $2^n$;
+	\section{Problem}
+		\begin{tabular}[b]{c|c|c|c|c|c|c|c}
+			& 1&1&1&1&1&1&1 \\
+			& second & minute & hour & day & month & year & century \\   \hline
+			$\lg n$ & $2^{10^6}$ & $2^{10^7\cdot6}$&$2^{10^8\cdot36}$&$2^{10^8\cdot864}$&$2^{10^8\cdot25920}$&$2^{10^8\cdot311040}$&$2^{10^8\cdot31104000}$ \\  \hline
+			$\sqrt{n}$&$10^{12}$&$36\cdot10^{14}$&$1296\cdot10^{16}$&$746496\cdot10^{16}$&$6718464\cdot10^{18}$&$967458816*10^{18}$&$967458816\cdot10^{22}$ \\ \hline
+			$n$&$10^6$&$10^7\cdot6$&$10^8\cdot36$&$10^8\cdot864$&$10^8\cdot25920$&$10^8\cdot311040$&$10^{10}\cdot311040$ \\ \hline
+			$n\lg n$&62746&2801417&133378058&2755147513&71870856404&	797633893349&	68654697441062 \\ \hline
+			$n^2$&	1000&	7745	&60000&	293938	&1609968	&5615692&	56175382 \\ \hline
+			$n^3$&	100&	391&	1532	&4420	&13736&	31593	&146677\\ \hline
+ 			$2n$&	19&	25&	31&	36&	41&	44&	51 \\ \hline
+			$n!$&	9	&11&	12&	13&	15&	16&	17  \\
+			\hline
+		\end{tabular}
+
+	
+
+%------------------------------------------------
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	chapter 2
+%----------------------------------------------------------------------------------------
+
+\chapter{Getting Started} 
+
+%------------------------------------------------
+	\section{Exercises}
+		\subsection{}
+			\begin{enumerate}
+				\item \textbf{31}, 41, 59, 26, 41, 58 
+				\item \textbf{31, 41}, 59, 26, 41, 58
+				\item \textbf{31, 41, 59}, 26, 41, 58
+				\item \textbf{31, 41, 26, 59}, 41, 58 -> \textbf{31, 26, 41, 59}, 41, 58
+						-> \textbf{26, 31, 41, 59}, 41, 58
+				\item \textbf{26, 31, 41, 41, 59}, 58
+				\item \textbf{26 ,31, 41, 41, 58, 59}
+			\end{enumerate}
+		\subsection{}
+			\begin{codebox}
+				\Procname{$\proc{Insertion-Sort-Decrease}(A)$}
+				\li \For $j \gets 2$ \To $\attrib{A}{length}$
+				\li \Do
+							$key \gets A[j]$
+				\li 		$i \gets j-1$
+				\li			\While $i > 0 $ and $A[i] < key$
+				\li			\Do
+									$A[i] \gets  A[i+1]$
+				\li					$i \gets i - 1$
+							\End
+				\li 		$A[i+1] \gets key$
+				   \End
+				\end{codebox}
+				
+		\subsection{}
+			\begin{codebox}
+				\Procname{$\proc{Linear-Search}(A, \upsilon)$}
+				\li \For $i \gets 1$ \To $\attrib{A}{length}$
+				\li \Do
+							\If $A[i] == \upsilon$
+				\li			\Do
+								\Return $i$
+							\End
+					\End
+				\li \Return \const{NIL}
+			\end{codebox}
+			Given the \textbf{loop invariant}:\\
+			\textbf{At the start of each iteration of the $for$ loop of lines 1-3, the subarray
+				$A[1 \twodots i - 1]$ consists of the elements that are all not equal to $\upsilon$}			\\
+		   The three properties:
+		   \begin{description}
+		   	\item[Initialization] We start by $i = 1$, the subarrary $A[1 \twodots i - 1]$ contains no element. So this holds
+		   	\item[Maintenance] Before every cycle, we know that elements in the subarray $A[1 \twodots i - 1]$ are all different from $\upsilon$, if $A[i] = \upsilon$, then we return $i$.
+		   	Otherwise, we go to the next cycle. Because $A[i]$ is different from $\upsilon$, it is maintained.
+		   	\item[Termination] The loop terminates: \\
+		   	1.when $i > A.length$, which is $ i = A.lengh + 1$,
+		   	thus the subarrary $A[1 \twodots A.length]$ contains elements different from $\upsilon$,
+		   	and we return NIL. \\
+		   	2.We found an index $i$, s.t. $A[i] = \upsilon$ and return $i$ .
+		   \end{description}
+		 \subsection{}
+		 \begin{description}
+		 	\item[Input:] Two bit 1-0 array $A[a_1, a_2, ... , a_n]$ and $B[b_1, b_2, ..., b_n]$ which represent two integer value $A^{'}, B^{'}$ in binary.
+		 	\item[Output:] A bit 1-0 array $C[c_1, c_2, ..., c_{n+1}]$, representing a integer value $C^{'}$
+		 	, s.t. $C^{'} $= $A^{'}$ $+ B^{'}$.
+		 \end{description}
+		 \begin{codebox}
+		 	\Procname{$\proc{Add-Integer}(A, B)$}
+		 	\li $C \gets$ $new$ $integer[\attrib{A}{length}]$
+		 	\li $\id{carry} \gets 0$
+		 	\li \For $i \gets 1 \To \attrib{A}{length}$
+		 	\li \Do 
+					  $C[i] \gets$$ (A[i] + B[i] + \id{carry})\mod{2}$
+			\li 	  $\id{carry} \gets (A[i] + B[i] + \id{carry}) / 2$
+				\End
+			\li $C[\attrib{A}{length}+1] \gets \id{carry}$
+			\li \Return C
+			    \End
+					 
+		 	\end{codebox}
+		 	
+	\section{Exercises}
+		\subsection{}
+			$\Theta(n^3)$.
+		\subsection{}
+			\begin{codebox}
+			\Procname{$\proc{Selection-Sort}(A)$}
+			\li \For $i \gets 1 \To \attrib{A}{length} - 1$
+			\li \Do
+					$c \gets A[i]$
+			\li 	$m \gets i$
+			\li  	\For $j \gets i + 1 \To A.length$
+			\li		\Do
+						\If $A[j] < A[m]$
+			\li			\Do
+							$m \gets j$
+						\End
+					\End
+			\li		$A[i] \gets A[m]$
+			\li		$A[m] \gets c$
+				\End
+			\End
+			\end{codebox}
+			Given the \textbf{loop invariant}:\\
+			\textbf{At the start of each iteration of the $for$ loop of lines 1-3, the subarray
+				$A[1 \twodots i - 1]$ consists of the elements that are in the original array $A$, but in sorted order, and they are all smaller than the other elements in the original array}.\\
+			The three properties:
+			\begin{description}
+				\item[Initialization] We start by $i = 1$, the subarrary $A[1 \twodots i - 1]$ contains no element. So this holds
+				\item[Maintenance] Before every cycle, we know that elements in the subarray $A[1 \twodots i - 1]$ are all smaller than elements in the subarray $A[i \twodots A.length]$. Next, we choose the smallest element from that subarray, swap it with $A[i]$, note that this element is bigger than the
+				elements in subarray $A[1 \twodots i - 1]$. Thus, the property is maintained.
+				\item[Termination] The loop terminates 
+				when $i = A.length$, 
+				thus the subarrary $A[1 \twodots A.length - 1]$ contains elements that are in the original array but in sorted order, and they are smaller than $A[i]$, 
+				Observing that, the whole array $A$ is in sorted order.Thus, this algorithm is correct.
+			\end{description}
+			From the loop invariant proof of this algorithm, we know why it stop at $n-1$.
+			And from simply analysis, it's not difficult to find out that both the worst-case 
+			and best-case are bounded to $\Theta(n^2)$.
+			
+		\subsection{}
+			suppose we have $n$ elements in total, then the average number of elements that we need to check is,
+			\begin{align*}
+			t = \dfrac{1 + 2 + \cdots + n}{n} = \dfrac{n+1}{2}
+			\end{align*}
+			No doubt , in the worst case
+			\begin{align*}
+			t = n
+			\end{align*}
+			In both cases, $t = \Theta(n)$
+		\subsection{}
+			Design a specific check method to check if all is done. 
+			
+	\section{Exercises}
+		\subsection{}
+		\begin{align*}
+			3 \ 9 \ 26  \ 38\  &41 \  49 \  52 \  57\\
+			3 \ 26\  41\  52 \ \ &\ \ \ 9\  38\  49\  57\\
+			3 \ 41 \ \ \ \ \ 26\  52 \ \ &\ \ \ 38\  57 \ \ \ \ \ 9\  49\\
+			3 \ \ \ \ \ 41 \ \ \ \ \ 52 \ \ \ \ \ 26 \ \ &\ \ \ 38 \ \ \ \ \ 57 \ \ \ \ \ 9 \ \ \ \ \ 49
+		\end{align*}
+		
+		\subsection{}
+					\begin{codebox}
+						\Procname{$\proc{New-Merge-Sort}(A,p,q,r)$}
+						\li $n_1 = q -p + 1$
+						\li $n_2 = r - q$
+						\li let $L[1 \twodots n_1 + 1] and R[1 \twodots n_2 + 1]$ be new arrays
+						\li \For $i \gets 1 \To n_1 $
+						\li \Do
+							$L[i] \gets A[p + i - 1]$
+						\End
+						\li \For $i \gets 1 \To n_2$
+						\li \Do
+							$R[i] \gets A[q + i]$
+							\End
+						\li $i \gets 1$
+						\li $j \gets 1$
+						\li \While $i \leq n_1$ and $ j \leq n_2$
+						\li \Do
+							\If $L[i] \leq R[j]$
+							\li \Then
+								$A[p] \gets L[i]$
+							\li	$i = i + 1$
+						\li	\Else
+						\li
+								$A[p] \gets R[j]$
+							\li $j = j + 1$
+							\End
+					\li		$p = p + 1$
+					\End
+					\li \While $i \leq n_1$
+					\li \Do
+						$A[p] \gets L[i]$
+					\li $i = i + 1 $
+					\li $p = p + 1$
+					   \End
+					\li \While $j \leq n_2$
+					\li \Do
+						$A[p] \gets R[j]$
+					\li $j = j + 1 $
+					\li $p = p + 1$
+					\End						
+						
+						\End
+					\end{codebox}
+		\subsection{}
+			\begin{description}
+				\item[Basis] when $k = 1,n = 2$, $T(n) = 2 = 2 \times \lg{2}$ holds.
+				\item[Induction] Suppose, for $n = 2^k, k \geq 1$, $T(n) = n\lg n$ holds, then we can derive that, for $k' = k + 1, n' = 2^{k'} = 2^{k+1}$
+				\begin{equation*}
+				\begin{aligned}
+				T(n') &= 2T(n'/2) + n' \\
+						&= 2n\lg n + n' \\
+						&= k2^{k+1} + 2^{k+1} \\
+						&= (k+1)\times 2^{k+1} \\
+						&= n' \lg n'
+				\end{aligned}
+				\end{equation*}
+			\end{description}
+		
+		\subsection{}
+			\[
+				T(n) = 
+				\begin{cases}
+				\Theta(1) 	& \text{if } n = 1 \\
+				T(n-1) + C(n-1) & \text{otherwise}
+				\end{cases}
+			\]
+			
+		\subsection{}
+			\begin{codebox}
+				\Procname{$\proc{Binary-Search}(A, low, high,key)$}
+				\li	\If $low > high$
+				\li \Then
+					\Return \const{Nil}
+				\End
+				\li $mid \gets (low + high) / 2$
+				\li \If $A[mid] \isequal key$
+				\li \Then
+					\Return $mid$
+				\li \ElseIf $A[mid] > key$
+				\li \Then
+					\Return $\proc{Binary-Search}(A, low, mid - 1, key)$
+				\li \Else
+				\li \Return $\proc{Binary-Search}(A, mid + 1, high, key)$
+				\End
+				\End
+				
+			\end{codebox}
+			
+			$T(n) = T((n-1)/2) + c$ \\
+			\begin{proof}
+				Each time, we check if the mid-element equal to key, this cost constant time. If not, we halve the problem size unless there is only one element to check.
+				For the worst case, we halve the problem every time and try to find the element that equals to the key. We can only do this for at most $\lg n$
+				times and each time's cost is constant, therefore, the worst-case running time of binary search is $\Theta(\lg n)$.
+			\end{proof}
+			
+		\subsection{}
+			Nope. 
+			
+			If the cost for comparison between elements is minimal compared with that of move the elements, then binary-search will not help much because we still have to move the elements by $\Theta(n)$ cost in the worst-case. \\
+			If the cost for comparison is dominant in overall cost then binary-search can make great improvements on $\proc{Insertion-Sort}$ algorithm. But the time complexity is still $\Theta(n \lg n)$ due to the swapping of elements.
+			
+	   \subsection{}
+		   We can sort the set $S$ in $\Theta(n \lg n)$ time and search in $\Theta(n)$ time, that gives us an overall $\Theta(n \lg n)$ algorithm.
+		   The linear search algorithm is given below ($S$ is sorted ).
+		   \begin{codebox}
+			   \Procname{$\proc{Search-Sum}(S, sum)$}
+			   \li $left \gets 1$
+			   \li $right \gets \attrib{S}{length}$
+			   \li \While $left < right$
+			   \li \Do
+				   $s \gets S[left] + S[right]$
+			   \li \If $s \isequal sum$
+			   \li \Then 
+				   \Return \const{True}
+			   \li \ElseIf $s > sum$
+			   \li \Then
+				   $right = right - 1$
+			   \li \Else
+			   \li	$left = left + 1$
+			   \End
+			   \End
+			   \li \Return \const{False}
+			   
+			   \End
+		   \end{codebox}
+
+\section{Problem}
+	\subsection{Insertion sort on small arrays in merge sort}
+		\begin{enumerate}[a]
+			\item sort a list of length k : $\Theta(k^2)$ 
+
+				  sort n/k list of length k : $\Theta(n/k * k^2) = \Theta(nk)$
+
+			\item \[
+						T(m) = 
+						\begin{cases}
+						
+						\end{cases}
+
+					\]
+		\end{enumerate}
+			
+%----------------------------------------------------------------------------------------%------------------------------------------------
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	chapter 3
+%----------------------------------------------------------------------------------------
+\chapter{Growth of Functions}
+
+%------------------------------------------------
+\section{Exercises}
+	\subsection{}
+		Because $f(n) and g(n)$ are asymptotically nonnegative functions, thus:
+		\begin{align*}
+		\exists n_1 s.t. f(n) > 0 ( n \geq n_1) \\
+		\exists n_2 s.t. g(n) > 0 (n \geq n_2) 
+		\end{align*}
+		Let $n_0 = max\{n_1, n_2\}$,\\
+		when $n > n_0$:
+		\begin{align*}
+					f(n) \leq max\{f(n), g(n)\}\\
+					g(n) \leq max\{f(n), g(n)\}
+		\end{align*}
+		thus:
+		\begin{align}\label{3.1}
+						 \frac{f(n) + g(n)}{2} \leq max\{(f(n), g(n)\}
+		\end{align}
+		holds. And \begin{align}\label{3.2}
+	        		max\{f(n), g(n)\} \leq f(n) + g(n) 
+		\end{align}
+		$\eqref{3.1}$ and $\eqref{3.2}$ states that: 
+		\begin{align*}
+		\exists n_0: \frac{f(n) + g(n)}{2} \leq max\{f(n), g(n)\} \leq f(n) + g(n) (n \geq n_0)
+		\end{align*}
+		therefore:
+		\begin{equation*}
+		max\{f(n), g(n)\} = \Theta (f(n) + g(n))
+		\end{equation*}
+		
+	\subsection{}
+			To show $(n+a)^b = \Theta (n^b)$, we need to find positive constants $c_1, c_2, n_0$ such that, when $n \geq n_0$, $0 \leq c_1n^b \leq (n+a)^b \leq c_2n^b$ holds. \\
+			We divide both sides of the inequality by $n^b$ \\
+			 since $n > 0$ and $ b > 0$, we have:
+			 \begin{equation*}
+			 c_1 \leq (1 + \frac{a}{n})^b \leq c_2
+			 \end{equation*}
+			 Let $n_0 = 2[|a|]$, then when $ n > n_0$
+			 \begin{align*}
+			 (\frac{1}{2})^b < (1+\frac{a}{n})^b < (\frac{3}{2})^b 
+			 \end{align*}
+			 holds.\\
+			 Thus we can pick $c_1 = (\frac{1}{4})^b$	,$c_2 = 2^b$
+			 \begin{align*}
+			 \text{When}\  n > n_0, \\
+			 0 \leq c_1n^b \leq (n+a)^b \leq c_2n^b \\
+			 thus, \\
+			 (n+a)^b = \Theta(n^b)
+			 \end{align*}
+			 
+	\subsection{}
+		Let $T(n)$ denote the running time of algorithm $A$. When we say $T(n)$ is at least $O(n^2)$, we mean,\\
+		$\exists f(n), $and two positive constant $c, n_0, s.t. 0 \leq f(n) \leq cn^2( n > n_0)$, and $T(n) \geq f(n)(n > n_0)$.
+		What is meaningless is that, $f(n)$ is not a determined function. Consequently, we know nothing about whether $T(n) = \Omega(n^2)$ , $T(n) = \Theta(n^2)$ or $T(n) = O(n^2)$. We have no idea what T(n) is going to be.		
+		
+	\subsection{}
+		$\forall n > 0, 0 < 2^{n+1} \leq 2\cdot 2^n $holds, thus $2^{n+1} = O(2^n)$ \\
+		But $2^{2n} \neq O(2^n)$ since $2^{2n}$ always exceeds $2^n$ at some point of $n_0$. 
+		
+	\subsection{}
+		\begin{proof}
+			\begin{description}
+				\item[$\implies$]
+			Because  $f(n) = \Theta(g(n))$, $\exists n_0, c_1, c_2 > 0$ s.t. when $n \geq n_0$
+			\begin{equation*}
+			0 \leq c_1g(n) \leq f(n) \leq c_2g(n)
+			\end{equation*}
+			this suffices that $f(n) = \Omega(g(n))$ and $f(n) = O(g(n))$
+			
+			\item[$\impliedby$]
+			When $f(n) = \Omega(g(n))$ and $f(n) = O(g(n))$ \\
+			$\exists n_1, c_1, s.t.$, when $n \geq n_1$, $f(n) \geq c_1g(n) \geq 0$ \\
+			 $\exists n_2, c_2, s.t.$, when $n \geq n_2$, $0 \leq f(n) \leq c_2g(n)$ \\
+			 Let $n_0 = max\{n_1, n_2\}$, thus when $n \geq n_0$
+			 \begin{align*}
+			 0 \leq c_1g(n) \leq f(n) \leq c_2g(n)
+			 \end{align*}
+			 So, $f(n) = \Theta(g(n))$
+			\end{description}
+		\end{proof}
+	
+	\subsection{}
+		\begin{proof}
+			Let $T(n)$ be the running time of an algorithm, $T_{\omega}(n)$ be the worst-case running time, $T_b(n)$ be the best-case running time.
+			Note that 
+			\begin{equation*}
+			T_b(n) \leq T(n) \leq T_{\omega}(n)
+			\end{equation*} 
+			If $T_b(n) = \Omega(g(n))$ and $T_{\omega}(n) = O(g(n))$, no doubt
+			$T(n) = \Theta(g(n))$
+			\\
+			On the other hand, if $T(n) = \Theta(g(n))$, then $T(n) = \Omega(g(n))$ and $T(n) = O(g(n))$ must holds by $Theorem 3.1$. And $T_b(n)$ and $T_{\omega}(n)$ are just corner cases of $T(n)$, thus $T_b(n) = \Omega(g(n))$ and $T_{\omega}(n) = O(g(n))$ are true.
+		\end{proof}
+		
+	\subsection{}
+		Assume it's not the empty set. As a result, there exists such $f(n)$ that
+		,for any positive constant $c > 0$, there exists a constant $n_0$ such that 
+		$0 \leq f(n) \leq cg(n)$ and $0 \leq cg(n) \leq f(n)$ for all $n \geq n_0$,
+		this cannot be true because $f(n)$ must satisfy for all positive $c$.\\
+		Therefore, $o(g(n)) \cap \omega(g(n))$ is the empty set.
+		
+	\subsection{}
+		\begin{align*}
+		\Omega(g(n,m)) = \{ f(n, m) : \text{there exist positive constants } c, n_0, \text{and } m_0 \\ 
+			\text{such that } 0 \leq cg(n, m) \leq f(n, m) \\
+			\text{for all } n \geq n_0 \text{ or } m \geq m_0 \}
+		\end{align*}
+		
+				\begin{align*}
+				\Theta(g(n,m)) = \{ f(n, m) : \text{there exist positive constants } c_1, c_2, n_0, \text{and } m_0 \\ 
+				\text{such that } 0 \leq c_1g(n, m) \leq f(n, m) \leq c_2g(n, m) \\
+				\text{for all } n \geq n_0 \text{ or } m \geq m_0 \}
+				\end{align*}
+	\section{Exercises}
+		\subsection{}
+			Let $0 \leq m \leq n$, since $f(n)$ and $g(n)$ are monotonically increasing functions,
+			\begin{align*}
+			f(m) \leq f(n) \\
+			g(m) \leq g(n) 
+			\end{align*}
+			therefore,
+			\begin{align*}
+			f(m) + g(m) \leq f(n) + g(n) \\
+			f(g(m)) \leq f(g(n))
+			\end{align*}
+			For the last one,
+			\begin{align*}
+			f(n)g(n) - f(m)g(m)  & = f(n)g(n) - f(m)g(n) + f(m)g(n) - f(m)g(m) \\
+			 & = [f(n) - f(m)]g(n) + [g(n) - g(m)]f(m) \\
+			 & \geq \ 0
+			\end{align*}
+			Done!
+		
+		\subsection{}
+			The Equation is,
+			\begin{equation*}
+			a^{log_bc} = c^{log_ba}
+			\end{equation*}
+			take logarithm on both sides,
+			\begin{equation*}
+			log_bc\ lna = log_ba\ lnc
+			\end{equation*}
+			then, use equation(3.15),
+			\begin{equation*}
+			\frac{lnc}{lnb} lna = \frac{lna}{lnb} lnc
+			\end{equation*}
+			we get,
+			\begin{equation*}
+			lnc\  lna = lna \ lnc
+			\end{equation*}
+			Q.E.D.
+			
+		\subsection{}
+			use $Stirling's$ $approximation$,
+			\begin{align*}
+			lg(n!) & = lg\sqrt{2\pi n} + nlg\frac{n}{e} + lg(1 + \Theta(\frac{1}{n}))\\
+			& = \Theta(lgn) + \Theta(nlgn) + \Theta(\frac{1}{n}) \\
+			& = \Theta(nlgn)
+			\end{align*}
+			for $n! = \omega(2^n)$ :
+			\begin{align*}
+			\forall n > 3:\ \ 	0 < 2^n = 2 \cdot 2 \cdots 2 < n(n-1)(n-2)\cdots1 = n! \implies n! = \omega(2^n)
+			\end{align*}
+			for $n! = o(n^n)$ :
+			\begin{align*}
+			\forall n > 1:\ \ 0 < n! = n(n-1)\cdots1 < n\cdot n\cdots n = n^n \implies n! = o(n^n)
+			\end{align*}
+			
+		\subsection{}
+		if a function $f(n)$ is polynomially bounded, then there exist positive constants $c,k,n_0,$ $f(n) = O(n^k)$such that when $n \geq n_0$,
+		$0 \leq f(n) \leq cn^k$,
+		take logarithm on the right part of the inequality,
+		\begin{align*}
+		\lg f(n) \leq k\lg n + \lg c \\
+		\lg f(n) = O(\lg n)
+		\end{align*}
+		 for the ceiling mark we know,
+		\begin{align*}
+		\lg n \leq \ceil*{\lg n} < \lg n + 1 < 2\lg n
+		\end{align*}
+		so $\ceil*{\lg n} = \Theta(\lg n)$
+		Therefore, using Eq.$(3.19)$,
+		\begin{align*}
+		\lg \ceil*{\lg n}! &= \Theta(\ceil*{\lg n} \lg (\ceil*{\lg n})) \\
+		& = \Theta(\lg n \lg \lg n) \\
+		& = \omega(\lg n)
+		\end{align*}
+		and,
+				\begin{align*}
+				\lg \ceil*{\lg \lg n}! &= \Theta(\ceil*{\lg \lg n} \lg (\ceil*{\lg \lg n})) \\
+				& = \Theta(\lg \lg n \lg \lg \lg n) \\
+				& = \Theta{((\lg \lg n)^2)} \\
+				& = \Theta(\lg^2 \lg n) \\
+				& = o(\lg n) \\
+				& = O(\lg n)
+				\end{align*}
+		therefore, the function $\ceil*{\lg n}!$ is not polynomially bounded, but 
+		$\ceil*{\lg \lg n}!$ is.
+	
+	\subsection{}
+		The latter one. Let $2^m = n$
+		\begin{align*}
+		\lg \lg^*n = \lg \lg^*2^m = \lg(1 + \lg^*m ) \\
+		\lg^*\lg n = \lg^*\lg 2^m = \lg^*m = \omega(1 + \lg^*m)
+		\end{align*}
+	\subsection{}
+		the solution of this equation are
+		\begin{align*}
+		x_{1,2} = \dfrac{1 \pm \sqrt{5}}{2}
+		\end{align*}
+		which are exactly $\phi $ and $ \hat{\phi}$.
+		
+	\subsection{}
+		\begin{description}
+			\item[Base Case] when $n = 1$, $Fibonacci(1) = 1$, while $F_1 = 1$ satisfies.
+			\item[Induction Steps] for $1,2,3,...k-1$ the equality holds,
+			then for $n = k$, by definition
+			\begin{align*}
+			F_k = F_{k-1} + F_{k-2} &= \dfrac{\phi^{k-1}-\hat{\phi}^{k-1}}{\sqrt{5}} +
+												 \dfrac{\phi^{k-2}-\hat{\phi}^{k-2}}{\sqrt{5}}\\
+											&= \dfrac{1}{\sqrt{5}}[(\dfrac{3 + \sqrt{5}}{2})\phi^{k-2}- 
+													(\dfrac{3-\sqrt{5}}{2})\hat{\phi}^{k-2}] \\
+										&= \dfrac{1}{\sqrt{5}}[\phi^2\phi^{k-2}- 
+										\hat{\phi}^2\hat{\phi}^{k-2}] \\
+										&= \dfrac{1}{\sqrt{5}}[\phi^{k}- 
+										\hat{\phi}^{k}] 
+			\end{align*} 
+		\end{description}
+					DONE!
+		
+		\subsection{}
+		Because $k\ln k = \Theta(n)$,
+		\begin{align*}
+			n = \Theta(k\ln k)
+		\end{align*}
+		therefore,
+		\begin{align*}
+		\dfrac{n}{\ln n} &= \Theta(\dfrac{k\ln k}{\ln n}) \\
+		&= \Theta(\dfrac{k\ln k}{\ln (k\ln k)})\\
+		&= \Theta(\dfrac{k\ln k}{\ln k + \ln\ln k)})\\	
+		&= \Theta(k) 
+		\end{align*}
+		thus,
+		\begin{align*}
+		k = \Theta(\dfrac{n}{\ln n})
+		\end{align*}
+		
+	\section{Problems}
+		\subsection{}
+			\begin{description}
+				\item[$a.$] To show that $p(n) = O(n^k)$, we have to find the constans $n_0,c$ such that when $n \geq n_0$, $p(n) \leq cn^k$.
+				
+				Let $c = a_d + q$, to find the $n_0$, let
+				\begin{align*}
+				p(n) = a_0 + a_1n + \dots + a_dn^d \leq cn^k
+				\end{align*}
+				divide both sides by $n^k$,
+				\begin{align*}
+				\dfrac{1}{n^k}(a_0 + a_1n + \dots + a_{d-1}n^{d-1}) +  a_dn^{d-k} \leq a_d + q				
+				\end{align*}
+				since $k \geq d$, we know $a_{d}n^{d-k} \leq a_d$, now we only have to show that
+				\begin{align*}
+				\dfrac{1}{n^k}(a_0 + a_1n + \dots + a_{d-1}n^{d-1}) \leq q			
+				\end{align*}
+				Let $a_m = max(|a_0|, |a_1|, ... , |a_{d-1})$, and $q= 1$, we only need to show
+				\begin{align*}
+					\dfrac{a_m}{n^k}(1 + n + ... + n^{d-1}) &\leq 1  \\
+						\dfrac{a_m}{n^k}\dfrac{n^d - 1}{n - 1}&\leq 1 \\
+				\end{align*}
+				because
+				\begin{align*}
+				\dfrac{n^d-1}{n-1} \leq \dfrac{n^d}{n/2} \ \ \ \ (n \geq 2 )
+				\end{align*}
+				Let
+				\begin{align*}
+				   	\dfrac{a_m}{n^k}\dfrac{n^d - 1}{n - 1}&\leq \dfrac{a_m}{n^k} \dfrac{n^d}{n/2} \\
+				   	&\leq 1 
+				\end{align*}
+				we know 
+				\begin{align*}
+				n \geq \sqrt[k+1-d]{a_m}
+				\end{align*}
+				choose $n_0 = max(\sqrt[k+1-d]{a_m}, 2)$ and $c = a_d + 1$, we are done.
+			\end{description}
+			the other 4 are proved similar processes.
+			
+		\subsection{}
+			\begin{description}
+				\item[$a$] $\lg^kn = o(n^{\epsilon}) = O(n^{\epsilon})$
+				\item[$b$] $n^k = o(c^n) = O(c^n)$
+				\item[$c$] No certain relations.
+				\item[$d$] $2^n = \omega(2^{n/2}) = \Omega(2^{n/2})$
+				\item[$e$] $n^{\lg c} = O(c^{\lg n}), n^{\lg c} = \Omega(c^{\lg n}), n^{\lg c} = \Theta(c^{\lg n})$. In fact, $c^{\lg n} = n^{\lg c}$
+			\end{description}
+			
+		\subsection{}
+			Rank$\downarrow$
+			\begin{enumerate}[\color{cyan}1]
+			\item$\ 2^{2^{n+1}} $
+			\item$\  2^{2^n} $ 
+			\item$ \ (n+1)!$
+			\item$\ n! $
+			\item$\ e^n$
+			\item$\ n\cdot 2^n$			
+			\item$\ 2^n$
+			\item$\ (3/2)^n$
+            \item$\ (\lg n)!$
+			\item$\ n^{\lg \lg n},\ (\lg n)^{\lg n}$
+			\item$\ n^3$
+			\item$\ 4^{\lg n}, \ n^2$
+			\item$\ \lg (n!),\ n\lg n$
+			\item$\ 2^{\lg n},\ n$
+			\item$\ (\sqrt{2})^{\lg n}$
+			\item$\ 2^{\sqrt{2\lg n}}$
+			\item$\ \lg^2n$
+			\item$\ \ln n$
+			\item$\ \sqrt{\lg n}$
+			\item$\ \ln \ln n$
+		    \item$\ 2^{\lg^*n}$
+		    \item$\ \lg^*n,\ \lg^*(\lg n)$
+		    \item$\ \lg(\lg^*n)$
+		    \item$\ n^{1/\lg n},\ 1$
+			 \end{enumerate}
+		    
+		    
+		    Example: $f(n) = 2^{2^{n+1}}sin(n)$
+		    
+		\subsection{}
+			\begin{enumerate}[\color{cyan}a]
+				\item wrong. Let$f(n) = n, g(n) = n^2$
+				\item wrong. Choose the same $f(n), g(n)$ as {\color{cyan} a}
+				\item correct.
+					\begin{proof}
+						$f(n) = O(g(n))$ means there exists constants $n_0, c$ such that,
+						when $n \geq n_0$, $0 \leq f(n) \leq cg(n)$, because $f(n) \geq 1$ and 
+						$\lg(g(n))\geq 1$ for all sufficiently large n,
+						\begin{align*}
+						0 \leq \lg f(n) \leq \lg(g(n)) + \lg c
+						\end{align*}
+						thus, $\lg f(n) = O(\lg(g(n)))$
+					\end{proof}
+			\item incorrect. $f(n) = 2n, g(n) = n$
+			\item wrong. Let $f(n) = 1/n$.
+			\item correct.
+			\item wrong. Let $f(n) = 2^n$
+			\item correct. Let $g(n) = o(f(n))$,
+			thus, for any positive constant $c$, $0 \leq g(n) < cf(n)$ when $n$ exceed some $n_0$, let $c = 1$, then
+			\begin{align*}
+			f(n) \leq f(n) + g(n) < 2f(n)
+			\end{align*} 
+			therefore,
+			\begin{align*}
+			f(n) + o(f(n)) = \Theta(f(n))
+			\end{align*}
+			\end{enumerate}
+			
+		\subsection{}
+			\begin{enumerate}[\color{cyan}a]
+				\item for
+			\begin{align*}
+			f(n) \geq cg(n)
+			\end{align*}
+			if there are finite many integers n satisfy this inequality, then choose $n_0$ to be the max among them.$f(n) = O(g(n))$
+			
+			if there are infinite many, then $f(n) = \overset{\infty}{\Omega}(g(n))$
+			
+			Both holds if $f(n) = g(n)$.
+			
+				\item We can use this symbol to describe some unstable running time algorithms like $n^3sin(n)$.
+				
+				but things may get unclear to some points.
+				
+			\item Becomes "implies".
+			
+			\item \begin{align*}
+			\widetilde{\Omega}(g(n)) = \{ f(n) :& \text{ there exist positive constants } c,k \text{ and } n_0 \text{ such that} \\
+			&f(n) \geq cg(n)\lg^k(n) \geq 0 \text{ for all } n \geq n_0 
+			\}
+			\end{align*}
+			 \begin{align*}
+			 \widetilde{\Theta}(g(n)) = \{ f(n) :& \text{ there exist positive constants } c_1,c_2,k_1,k_2 \text{ and } n_0 \text{ such that} \\
+			 &0 \leq c_1g(n)\lg^{k_1}n \leq f(n) \leq c_2g(n)\lg^{k_2}(n) \text{ for all } n \geq n_0 
+			 \}
+			 \end{align*}
+			 		\begin{proof}
+			 			\begin{description}
+			 				\item[$\implies$]
+			 				Because  $f(n) = \widetilde{\Theta}(g(n))$, $\exists n_0, c_1, c_2, k_1, k_2 > 0$ s.t. when $n \geq n_0$
+			 				\begin{equation*}
+			 				0 \leq c_1g(n)\lg^{k_1}n \leq f(n) \leq c_2g(n)\lg^{k_2}n
+			 				\end{equation*}
+			 				this suffices that $f(n) = \widetilde{\Omega}(g(n))$ and $f(n) = \widetilde{O}(g(n))$
+			 				
+			 				\item[$\impliedby$]
+			 				When $f(n) = \widetilde{\Omega}(g(n))$ and $f(n) = \widetilde{O}(g(n))$ \\
+			 				$\exists n_1, c_1,k_1 s.t.$, when $n \geq n_1$, $f(n) \geq c_1g(n)\lg^{k_1}n \geq 0$ \\
+			 				$\exists n_2, c_2,k_2 s.t.$, when $n \geq n_2$, $0 \leq f(n) \leq c_2g(n)\lg^{k_2}n$ \\
+			 				Let $n_0 = max\{n_1, n_2\}$, thus when $n \geq n_0$
+			 				\begin{align*}
+			 				0 \leq c_1g(n)\lg^{k_1}n \leq f(n) \leq c_2g(n)\lg^{k_2}n
+			 				\end{align*}
+			 				So, $f(n) = \widetilde{\Theta}(g(n))$
+			 			\end{description}
+			 		\end{proof}
+					\end{enumerate}
+					
+		 \subsection{}
+		 \begin{center}
+			 \begin{tabular}{ccc|c|}
+			 	&$f(n)$&$c$&$f_c^*(n)$  \\ \hline
+			 	\textbf{$a.$}&$n-1$&0&$\Theta(n)$ \\ \hline
+			 	\textbf{$b.$}&$\lg n$&1&$\Theta(\lg^*n)$ \\ \hline
+			 	\textbf{$c.$}&$n/2$&1&$\Theta(\lg n)$ \\ \hline
+			 	\textbf{$d.$}&$n/2$&2&$\Theta(\lg n)$ \\ \hline
+			 	\textbf{$e.$}&$\sqrt{n}$&2&$\Theta(\lg \lg n)$ \\ \hline
+			 	\textbf{$f.$}&$\sqrt{n}$&1&$None$ \\ \hline
+			 	\textbf{$g.$}&$n^{\frac{1}{3}}$&2&$\log_{3}\lg n$ \\ \hline
+			 	\textbf{$h.$}&$n/\lg n$&2&$\omega(\log_{\frac{1}{1-\epsilon}}\lg n), o(\lg n)$ \\ \hline
+			 \end{tabular}
+			 		 \end{center}
+			Notes : 
+			
+			
+			{\color{cyan} f}     \  for $f(n) = \sqrt{n}$, we know $\lim\limits_{n\rightarrow\infty}\sqrt[n]{n} = 1$, but for finite $n,k$, $n^{\frac{1}{2^k}} > 1$
+			
+			{\color{cyan} h} \   $\epsilon$ is a positive constant.
+\end{document}
